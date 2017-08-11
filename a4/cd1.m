@@ -4,7 +4,7 @@ function ret = cd1(rbm_w, visible_data)
 % The returned value is the gradient approximation produced by CD-1. It's of the same shape as <rbm_w>.
 
     % CD1 Version 3 - PA4 Q9
-    visible_data = sample_bernoulli(visible_data)
+    visible_data = sample_bernoulli(visible_data);
 
     h = visible_state_to_hidden_probabilities(rbm_w, visible_data);
 
@@ -19,7 +19,7 @@ function ret = cd1(rbm_w, visible_data)
     h_again = visible_state_to_hidden_probabilities(rbm_w, visible_sample);
 
     data_goodness_again = configuration_goodness_gradient(visible_sample, h_again);
-    ret = data_goodness .- data_goodness_again;   
+    ret = data_goodness .- data_goodness_again;
 
     % CD1 Version 2 - PA4 Q8
     % h = visible_state_to_hidden_probabilities(rbm_w, visible_data);
@@ -35,7 +35,7 @@ function ret = cd1(rbm_w, visible_data)
     % h_again = visible_state_to_hidden_probabilities(rbm_w, visible_sample);
 
     % data_goodness_again = configuration_goodness_gradient(visible_sample, h_again);
-    % ret = data_goodness .- data_goodness_again;   
+    % ret = data_goodness .- data_goodness_again;
 
     % CD1 Version 1 - PA4 Q7
     % h = visible_state_to_hidden_probabilities(rbm_w, visible_data);
